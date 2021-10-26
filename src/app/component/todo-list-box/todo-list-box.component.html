@@ -1,0 +1,11 @@
+<div class="list-box">
+    <div class="date-txt">{{ todayUserList.currentDate }}</div>
+    <div class="list-container">
+        <app-todo-target [toDoList]="todayUserList" ></app-todo-target>
+    </div>
+    <div class="button-area">
+        <img *ngIf="!isToday" (click)="goToday()" src="..\assets\png\ic_back.png">
+        <img *ngIf="isToday" (click)="goTomorrowDate()"  src="..\assets\png\ic_forward.png">
+    </div>
+    
+</div>

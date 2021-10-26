@@ -1,0 +1,20 @@
+<ng-template #saveListItem>
+    <div class="list-item-container" *ngFor="let list of toDoList.listItem; index as index;"
+    [ngClass]="{ 'success-list' : list.isSuccess }" (click)="onSuccessList(index)">
+        <img class="list-item-icon" src="..\assets\png\ic_cloud.png">
+        <div class="list-txt">{{ list.category }}</div>
+        <img class="delete-icon" (click)="onDeleteMode(index)" src="..\assets\png\ic_delete.png">
+    </div>
+</ng-template>
+
+<ng-template #addListItem>
+    <div class="list-item-container">
+        <img class="list-item-icon" src="..\assets\png\ic_cloud.png">
+        <input id="list-input" *ngIf="!isModify" type="text" placeholder="할 일을 입력해보세요!" autofocus> 
+        <img class="check-icon" (click)="onAddItem()" src="..\assets\svg\check.svg">       
+    </div>
+</ng-template>
+
+
+<ng-container *ngTemplateOutlet="addListItem"></ng-container>
+<ng-container *ngTemplateOutlet="saveListItem"></ng-container>
