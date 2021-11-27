@@ -8,7 +8,7 @@ import { TodolistInterface } from './manager/todolist/todolist-interface';
 })
 
 export class AppComponent {
-  title = 'ToDoList';
+  title = 'To Do List';
   todoListService:TodoListService = new TodoListService;
 
   userTodoList:TodolistInterface[] = [];
